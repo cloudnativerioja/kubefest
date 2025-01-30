@@ -1,5 +1,4 @@
 # kubefest.com zone
-
 resource "cloudflare_zone" "kubefest" {
   account_id = var.account_id
   zone       = "kubefest.com"
@@ -15,6 +14,13 @@ resource "cloudflare_record" "kubefest_com" {
 resource "cloudflare_record" "www_kubefest_com" {
   zone_id = cloudflare_zone.kubefest.id
   name    = "www"
+  content = "cloudnativerioja.github.io"
+  type    = "CNAME"
+}
+
+resource "cloudflare_record" "2024_kubefest_com" {
+  zone_id = cloudflare_zone.kubefest.id
+  name    = "2024"
   content = "cloudnativerioja.github.io"
   type    = "CNAME"
 }
