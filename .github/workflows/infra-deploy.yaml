@@ -3,6 +3,9 @@ on:
   push:
     branches:
       - master
+    paths-ignore:
+      - "**.tfstate"
+      - "**.tfstate.encrypted"
 
 env:
   # Secrets for cloudflare
@@ -28,7 +31,7 @@ jobs:
         with:
           encryption_key: ${{ secrets.ENCRYPTION_KEY }}
           operation: download
-          location: artifact
+          location: repository
           directory: infra
           github_token: ${{ secrets.gh_access_token }}
         continue-on-error: true
@@ -55,6 +58,6 @@ jobs:
         with:
           encryption_key: ${{ secrets.ENCRYPTION_KEY }}
           operation: upload
-          location: artifact
+          location: repository
           directory: infra
           github_token: ${{ secrets.gh_access_token }}
