@@ -1,8 +1,11 @@
 # kubefest.com zone
 
 resource "cloudflare_zone" "kubefest" {
-  account_id = var.account_id
-  zone       = "kubefest.com"
+  account = {
+    id = var.account_id
+  }
+  name = "kubefest.com"
+  type = "full"
 }
 
 resource "cloudflare_record" "kubefest_com" {
