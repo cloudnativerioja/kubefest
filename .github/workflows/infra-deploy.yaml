@@ -31,7 +31,6 @@ jobs:
           encryption_key: ${{ secrets.ENCRYPTION_KEY }}
           operation: download
           location: artifact
-          directory: infra
           github_token: ${{ secrets.gh_access_token }}
         continue-on-error: true
 
@@ -58,5 +57,4 @@ jobs:
           encryption_key: ${{ secrets.ENCRYPTION_KEY }}
           operation: upload
           location: artifact
-          directory: infra
           github_token: ${{ secrets.gh_access_token }}
