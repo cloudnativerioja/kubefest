@@ -1,11 +1,11 @@
 variable "cloudflare_zone_id" {
   type        = string
   default     = ""
-  description = "Cloudflare zone ID"
+  description = "Cloudflare Zone ID"
 }
 
 variable "cloudflare_api_token" {
   type        = string
   default     = ""
-  description = "Cloudflare api token"
+  description = "Cloudflare API Token"
 }
