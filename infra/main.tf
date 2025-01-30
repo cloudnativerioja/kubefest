@@ -26,7 +26,7 @@ resource "cloudflare_dns_record" "www_kubefest_com" {
   proxied = false
 }
 
-resource "cloudflare_dns_record" "www_kubefest_com" {
+resource "cloudflare_dns_record" "year_2024_kubefest_com" {
   zone_id = cloudflare_zone.kubefest.id
   name    = "2024"
   content = "cloudnativerioja.github.io"
