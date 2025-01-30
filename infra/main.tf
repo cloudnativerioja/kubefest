@@ -5,7 +5,6 @@ resource "cloudflare_zone" "kubefest" {
     id = var.account_id
   }
   name = "kubefest.com"
-  type = "full"
 }
 
 resource "cloudflare_dns_record" "kubefest_com" {
