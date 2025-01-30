@@ -26,7 +26,7 @@ The infrastructure is managed through Terraform and automatically deployed using
 - Security scanning using tfsec
 - Automatic deployment to production when changes are merged to master
 
-## Contributing
+## Contributing instructions
 
 1. Create a new branch
 2. Make your changes
