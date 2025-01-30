@@ -10,7 +10,7 @@ on:
 env:
   # Secrets for cloudflare
   TF_VAR_cloudflare_api_token: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-  TF_VAR_account_id: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+  TF_VAR_zone_id: ${{ secrets.CLOUDFLARE_ZONE_ID }}
 
 jobs:
   terraform:

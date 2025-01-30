@@ -1,7 +1,7 @@
-variable "account_id" {
+variable "zone_id" {
   type        = string
   default     = ""
-  description = "Cloudflare account ID"
+  description = "Cloudflare zone ID"
 }
 
 variable "cloudflare_api_token" {
