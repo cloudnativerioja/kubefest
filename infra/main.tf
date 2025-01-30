@@ -8,17 +8,27 @@ resource "cloudflare_zone" "kubefest" {
   type = "full"
 }
 
-resource "cloudflare_record" "kubefest_com" {
+resource "cloudflare_dns_record" "kubefest_com" {
   zone_id = cloudflare_zone.kubefest.id
   name    = "kubefest.com"
   content = "cloudnativerioja.github.io"
+  proxied = false
   type    = "CNAME"
 }
 
-resource "cloudflare_record" "www_kubefest_com" {
+resource "cloudflare_dns_record" "www_kubefest_com" {
   zone_id = cloudflare_zone.kubefest.id
   name    = "www"
   content = "cloudnativerioja.github.io"
+  proxied = false
+  type    = "CNAME"
+}
+
+resource "cloudflare_dns_record" "www_kubefest_com" {
+  zone_id = cloudflare_zone.kubefest.id
+  name    = "www"
+  content = "cloudnativerioja.github.io"
+  proxied = false
   type    = "CNAME"
 }
 
