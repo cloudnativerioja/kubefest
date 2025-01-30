@@ -51,7 +51,6 @@ jobs:
 
       - name: Terraform Apply
         run: terraform apply -auto-approve -input=false
-        continue-on-error: true
 
       - name: Encrypt Artifact & Upload Encrypted Artifact
         uses: badgerhobbs/terraform-state@v2
