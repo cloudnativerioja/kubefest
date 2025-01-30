@@ -7,10 +7,6 @@ on:
       - "infra/**"
 
 env:
-  # Credentials for AWS
-  AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-  AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-  AWS_DEFAULT_REGION: us-east-1
   # Secrets for cloudflare
   TF_VAR_cloudflare_api_token: ${{ secrets.CLOUDFLARE_API_TOKEN }}
   TF_VAR_account_id: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
@@ -29,6 +25,14 @@ jobs:
       - name: Checkout the repository to the runner
         uses: actions/checkout@v4
 
+      - name: Download Encrypted Artifact & Decrypt Artifact
+        uses: badgerhobbs/terraform-state@v2
+        with:
+          encryption_key: ${{ secrets.ENCRYPTION_KEY }}
+          operation: download
+          location: artifact
+          github_token: ${{ secrets.gh_access_token }}
+
       - name: Setup Terraform with specified version on the runner
         uses: hashicorp/setup-terraform@v3
         with:
@@ -44,3 +48,11 @@ jobs:
 
       - name: Terraform Apply
         run: terraform apply -auto-approve -input=false
+
+      - name: Encrypt Artifact & Upload Encrypted Artifact
+        uses: badgerhobbs/terraform-state@v2
+        with:
+          encryption_key: ${{ secrets.ENCRYPTION_KEY }}
+          operation: upload
+          location: artifact
+          github_token: ${{ secrets.gh_access_token }}
