@@ -24,14 +24,6 @@ resource "cloudflare_dns_record" "www_kubefest_com" {
   type    = "CNAME"
 }
 
-resource "cloudflare_dns_record" "www_kubefest_com" {
-  zone_id = cloudflare_zone.kubefest.id
-  name    = "www"
-  content = "cloudnativerioja.github.io"
-  proxied = false
-  type    = "CNAME"
-}
-
 # Google Search Console verification
 resource "cloudflare_record" "gsc_kubefest_com" {
   zone_id = cloudflare_zone.kubefest.id
