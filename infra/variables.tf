@@ -1,4 +1,4 @@
-variable "zone_id" {
+variable "cloudflare_zone_id" {
   type        = string
   default     = ""
   description = "Cloudflare zone ID"
