@@ -18,7 +18,7 @@ resource "cloudflare_record" "www_kubefest_com" {
   type    = "CNAME"
 }
 
-resource "cloudflare_record" "2024_kubefest_com" {
+resource "cloudflare_record" "year_2024_kubefest_com" {
   zone_id = cloudflare_zone.kubefest.id
   name    = "2024"
   content = "cloudnativerioja.github.io"
