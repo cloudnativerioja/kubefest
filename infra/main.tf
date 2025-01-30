@@ -12,16 +12,18 @@ resource "cloudflare_dns_record" "kubefest_com" {
   zone_id = cloudflare_zone.kubefest.id
   name    = "kubefest.com"
   content = "cloudnativerioja.github.io"
-  proxied = false
   type    = "CNAME"
+  ttl     = "1"
+  proxied = false
 }
 
 resource "cloudflare_dns_record" "www_kubefest_com" {
   zone_id = cloudflare_zone.kubefest.id
   name    = "www"
   content = "cloudnativerioja.github.io"
-  proxied = false
   type    = "CNAME"
+  ttl     = "1"
+  proxied = false
 }
 
 # Google Search Console verification
