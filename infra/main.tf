@@ -27,7 +27,7 @@ resource "cloudflare_dns_record" "www_kubefest_com" {
 }
 
 # Google Search Console verification
-resource "cloudflare_dns_record" "www_kubefest_com" {
+resource "cloudflare_dns_record" "gsc_kubefest_com" {
   zone_id = cloudflare_zone.kubefest.id
   name    = "kubefest.com"
   content = "google-site-verification=eTKt9_NpprU6T0FDPi-He0oZirSyEZqDMOBqmKfMNpc"
