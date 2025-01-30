@@ -60,14 +60,6 @@ jobs:
         run: terraform plan -no-color -input=false
         continue-on-error: true
 
-      - name: Encrypt Artifact & Upload Encrypted Artifact
-        uses: badgerhobbs/terraform-state@v2
-        with:
-          encryption_key: ${{ secrets.ENCRYPTION_KEY }}
-          operation: upload
-          location: artifact
-          github_token: ${{ secrets.gh_access_token }}
-
         # Comment in the PR
       - name: Comment PR
         uses: actions/github-script@v7
