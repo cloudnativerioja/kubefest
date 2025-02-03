@@ -25,6 +25,15 @@ resource "cloudflare_dns_record" "year_2024_kubefest_com" {
   proxied = false
 }
 
+resource "cloudflare_dns_record" "year_2025_kubefest_com" {
+  zone_id = var.cloudflare_zone_id
+  name    = "2025"
+  content = "cloudnativerioja.github.io"
+  type    = "CNAME"
+  ttl     = "1"
+  proxied = false
+}
+
 # Google Search Console verification
 resource "cloudflare_dns_record" "gsc_kubefest_com" {
   zone_id = var.cloudflare_zone_id
