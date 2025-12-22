@@ -16,6 +16,7 @@ Each KubeFest event has its own dedicated repository:
 
 - [KubeFest 2024](https://github.com/cloudnativerioja/kubefest-2024)
 - [KubeFest 2025](https://github.com/cloudnativerioja/kubefest-2025)
+- [KubeFest 2026](https://github.com/cloudnativerioja/kubefest-2026)
 - Future editions will be added as they are created
 
 ## Infrastructure Management
