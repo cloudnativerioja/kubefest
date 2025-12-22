@@ -42,3 +42,30 @@ resource "cloudflare_dns_record" "gsc_kubefest_com" {
   type    = "TXT"
   ttl     = "1"
 }
+
+# Mail
+resource "cloudflare_dns_record" "kubefest_mx_1" {
+  zone_id = var.cloudflare_zone_id
+  name    = "@"
+  type    = "MX"
+  content = "mx1.improvmx.com"
+  priority = 10
+  ttl     = 1
+}
+
+resource "cloudflare_dns_record" "kubefest_mx_2" {
+  zone_id = var.cloudflare_zone_id
+  name    = "@"
+  type    = "MX"
+  content = "mx2.improvmx.com"
+  priority = 20
+  ttl     = 1
+}
+
+resource "cloudflare_dns_record" "kubefest_spf" {
+  zone_id = var.cloudflare_zone_id
+  name    = "@"
+  type    = "TXT"
+  content = "v=spf1 include:spf.improvmx.com ~all"
+  ttl     = 1
+}
